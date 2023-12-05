@@ -38,8 +38,8 @@ const main = () => {
             el.classList.remove("is-open");
           });
         }
-      }, 1000);
-      waitFlag = false;
+        waitFlag = false;
+      }, 800);
     }
   }
 
