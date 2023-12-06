@@ -69,3 +69,19 @@ body {
     opacity: 0;
   }
 }
+
+.congratulations{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5vw;
+  background: linear-gradient(90deg, #4158D0, #C850C0 30%, #FFCC70);
+  background: -webkit-linear-gradient(0deg, #4158D0, #C850C0 30%, #FFCC70);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: none;
+  &.is-show{
+    display: inline-block;
+  }
+}

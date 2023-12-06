@@ -2,6 +2,7 @@ import "../scss/style.scss";
 
 const main = () => {
   let waitFlag = false;
+  let clearNum = 0;
 
   // カードをセット
   setCards();
@@ -32,6 +33,8 @@ const main = () => {
           openCards.forEach((el: HTMLElement) => {
             el.classList.remove("is-open");
             el.classList.add("clear");
+            clearNum += 1;
+            if(clearNum === 26) congratulations();
           })
         }else{
           openCards.forEach((el: HTMLElement) => {
@@ -41,6 +44,9 @@ const main = () => {
         waitFlag = false;
       }, 800);
     }
+  }
+  function congratulations() {
+    document.querySelector(".congratulations")?.classList.add("is-show");
   }
 
   function shuffleArray<T>(array: T[]): T[] {

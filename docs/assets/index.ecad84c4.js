@@ -1,0 +1,10 @@
+(function(){const c=document.createElement("link").relList;if(c&&c.supports&&c.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))d(t);new MutationObserver(t=>{for(const s of t)if(s.type==="childList")for(const a of s.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&d(a)}).observe(document,{childList:!0,subtree:!0});function l(t){const s={};return t.integrity&&(s.integrity=t.integrity),t.referrerpolicy&&(s.referrerPolicy=t.referrerpolicy),t.crossorigin==="use-credentials"?s.credentials="include":t.crossorigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function d(t){if(t.ep)return;t.ep=!0;const s=l(t);fetch(t.href,s)}})();const f=()=>{let i=!1,c=0;u(),document.querySelectorAll(".js-card").forEach(e=>{e.addEventListener("click",function(r){r.target instanceof HTMLElement&&!i&&(d(r.target),t())})});function d(e){e.classList.contains("clear")||e.classList.add("is-open")}function t(){const e=document.querySelectorAll(".card.is-open");e.length===2&&(i=!0,setTimeout(()=>{const r=e[0].dataset.num,n=e[1].dataset.num;r===n?e.forEach(o=>{o.classList.remove("is-open"),o.classList.add("clear"),c+=1,c===26&&s()}):e.forEach(o=>{o.classList.remove("is-open")}),i=!1},800))}function s(){var e;(e=document.querySelector(".congratulations"))==null||e.classList.add("is-show")}function a(e){const r=[...e];for(let n=r.length-1;n>0;n--){const o=Math.floor(Math.random()*(n+1));[r[n],r[o]]=[r[o],r[n]]}return r}function u(){let e=[1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13];e=a(e);const r=document.querySelector(".js-box");e.forEach(n=>{const o=`
+      <div class="card js-card" data-num="`+n+`">
+        <div class="card_back">
+          <img src="./assets/img/card_back.png" alt=""/>
+        </div>
+        <div class="card_front">
+          <img src="./assets/img/card_spade_`+n+`.png" alt=""/>
+        </div>
+      </div>
+      `;r==null||r.insertAdjacentHTML("beforeend",o)})}};window.addEventListener("DOMContentLoaded",()=>{f()});
